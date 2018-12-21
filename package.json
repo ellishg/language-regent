@@ -1,0 +1,19 @@
+{
+  "name": "language-regent",
+  "version": "0.0.0",
+  "description": "Syntax highlighting for the Regent language.",
+  "keywords": [
+    "language",
+    "grammar",
+    "Regent",
+    "Lua"
+  ],
+  "repository": "https://github.com/sparkasaurusRex/language-regent",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+    "tree-sitter-regent": "^0.0.1"
+  }
+}
