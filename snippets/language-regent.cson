@@ -10,12 +10,27 @@
   'fspace':
     'prefix': 'fspace'
     'body': 'fspace ${1:name} {\n\t${2:-- data...}\n}'
+  'ispace':
+    'prefix': 'ispace'
+    'body': 'ispace(${1:type}, ${2:size})'
+  'region':
+    'prefix': 'region'
+    'body': 'region(${1:ispace}, ${2:type})'
   'copy':
     'prefix': 'copy'
     'body': 'copy(${1:source_region}, ${2:dest_region})'
   'fill':
     'prefix': 'fill'
     'body': 'fill(${1:region}, ${2:value})'
+  'partition':
+    'prefix': 'partition'
+    'body': 'partition(${1:type}, ${2:region}, ${3:color_space})'
+  'image':
+    'prefix': 'image'
+    'body': 'image(${1:parent_region}, ${2:source_partition}, ${3:data_region.field})'
+  'preimage':
+    'prefix': 'preimage'
+    'body': 'preimage(${1:parent_region}, ${2:target_partition}, ${3:data_region.field})'
 
   # Lua snippets
   'function':
