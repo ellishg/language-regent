@@ -11,7 +11,6 @@ fileTypes: ['rg']
 comments:
   start: '-- '
 
-# TODO: Do keyword/entity.name.function stuff...
 scopes:
   # Regent
 
@@ -24,12 +23,6 @@ scopes:
     task_privilege_declaration > "reads",
     task_privilege_declaration > "writes",
     task_privilege_declaration > "reduces",
-    task_privilege_declaration > "+",
-    task_privilege_declaration > "*",
-    task_privilege_declaration > "-",
-    task_privilege_declaration > "/",
-    task_privilege_declaration > "min",
-    task_privilege_declaration > "max",
     task_privilege_declaration > "exclusive",
     task_privilege_declaration > "atomic",
     task_privilege_declaration > "simultaneous",
@@ -38,14 +31,20 @@ scopes:
     task > "end"
   ''': 'keyword.control'
   '''
+    task_privilege_declaration > "+",
+    task_privilege_declaration > "*",
+    task_privilege_declaration > "-",
+    task_privilege_declaration > "/",
+    task_privilege_declaration > "min",
+    task_privilege_declaration > "max",
     task_constraints_declaration > "*",
     task_constraints_declaration > "<="
-  ''': 'keyword.control' # TODO: Should be operator
+  ''': 'keyword.operators'
 
   '''
     copy_statement > "copy",
     fill_statement > "fill"
-  ''': 'keyword.control'
+  ''': 'keyword.operators'
 
   # fspace definition
   'fspace > "fspace"': 'keyword.control'
@@ -124,7 +123,7 @@ scopes:
     unary_operation > "#",
     unary_operation > "-",
     unary_operation > "~"
-  ''': 'keyword.control' # TODO: Should be operator
+  ''': 'keyword.operators'
 
   'variable_declarator > identifier': 'entity.name.variable'
 
