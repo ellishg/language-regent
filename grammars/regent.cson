@@ -16,10 +16,15 @@ scopes:
   'task > name': 'entity.name.function'
   'task_parameter > name': 'constant.variable'
 
-  'fspace > name': 'entity.name.class'
+  '''
+    fspace > name,
+    struct > name
+  ''': 'entity.name.class'
+
   '''
     fspace_argument > name,
-    fspace_field > name
+    fspace_field > name,
+    struct_field > name
   ''': 'entity.name.variable'
 
   'var_statement > name': 'constant.variable'
@@ -32,6 +37,7 @@ scopes:
   '''
     "task",
     "fspace",
+    "struct",
     "region",
     "ispace",
     "ptr",
