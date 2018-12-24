@@ -13,173 +13,139 @@ comments:
 
 scopes:
   # Regent
+  'task > name': 'entity.name.function'
+  'task_parameter > name': 'constant.variable'
 
-  # task definition
-  'task > task_name': 'entity.name.function'
-  'task_parameter > task_parameter_name': 'constant.variable'
+  'fspace > name': 'entity.name.class'
   '''
-    task > "task",
-    task > "where",
-    task_privilege_declaration > "reads",
-    task_privilege_declaration > "writes",
-    task_privilege_declaration > "reduces",
-    task_privilege_declaration > "exclusive",
-    task_privilege_declaration > "atomic",
-    task_privilege_declaration > "simultaneous",
-    task_privilege_declaration > "relaxed",
-    task > "do",
-    task > "end"
-  ''': 'keyword.control'
-  '''
-    task_privilege_declaration > "+",
-    task_privilege_declaration > "*",
-    task_privilege_declaration > "-",
-    task_privilege_declaration > "/",
-    task_privilege_declaration > "min",
-    task_privilege_declaration > "max",
-    task_constraints_declaration > "*",
-    task_constraints_declaration > "<="
-  ''': 'keyword.operators'
-
-  '''
-    copy_statement > "copy",
-    fill_statement > "fill"
-  ''': 'keyword.operators'
-
-  # fspace definition
-  'fspace > "fspace"': 'keyword.control'
-  'fspace > fspace_name': 'entity.name.class'
-  '''
-    fspace > fspace_argument_name,
-    fspace > fspace_field > fspace_field_name
+    fspace_argument > name,
+    fspace_field > name
   ''': 'entity.name.variable'
 
-  'region_type > "region"': 'keyword.control'
+  'var_statement > name': 'constant.variable'
 
-  'region_identifier > wild': 'keyword.control'
-  'region_identifier > identifier': 'constant.variable'
-
-  'regent_index_space > "ispace"': 'keyword.control'
+  'region_field_identifier > identifier': 'constant.variable'
 
   'type_identifier': 'support.storage.type'
-  'regent_primitive': 'support.storage.type'
+  'regent_primitive_type': 'support.storage.type'
+
+  '''
+    "task",
+    "fspace",
+    "region",
+    "ispace",
+    "ptr",
+    "var",
+    "where",
+    "reads",
+    "writes",
+    "reduces",
+    "exclusive",
+    "atomic",
+    "simultaneous",
+    "relaxed",
+  ''': 'keyword.control'
+  '''
+    "min",
+    "max",
+    "copy",
+    "fill"
+  ''': 'keyword.operators'
+  '"wild"': 'constant.language'
+
+  '":"': 'meta.delimiter'
 
   # Lua
+  "comment": "comment"
+  "string": "string"
+  "number": "constant.numeric"
+
   '''
-    return_statement > "return",
-    local_variable_declaration > "local",
-    do_statement > "do",
-    do_statement > "end",
-    if_statement > "if",
-    if_statement > "then",
-    if_statement > "end",
-    elseif_statement > "elseif",
-    elseif_statement > "then",
-    else_statement > "else",
-    while_statement > "while",
-    while_statement > "do",
-    while_statement > "end",
-    repeat_statement > "repeat",
-    repeat_statement > "until",
-    for_statement > "for",
-    for_statement > "do",
-    for_statement > "end",
-    for_in_statement > "for",
-    for_in_statement > "do",
-    for_in_statement > "end",
-    loop_expression > "in",
-    goto_statement > "goto",
-    break_statement > "break",
-    spread,
-    self,
+    function > function_name > identifier,
+    function > function_name > property_identifier,
+    function > function_name > method,
+    local_function > identifier,
+    function_call > identifier,
+    function_call > property_identifier,
+    function_call > method,
     next
-  ''': 'keyword.control'
+  ''': "entity.name.function"
 
   '''
-    variable_declaration > "=",
-    local_variable_declaration > "=",
-    binary_operation > "or",
-    binary_operation > "and",
-    binary_operation > "<",
-    binary_operation > "<=",
-    binary_operation > "==",
-    binary_operation > "~=",
-    binary_operation > ">=",
-    binary_operation > ">",
-    binary_operation > "|",
-    binary_operation > "~",
-    binary_operation > "&",
-    binary_operation > "<<",
-    binary_operation > ">>",
-    binary_operation > "+",
-    binary_operation > "-",
-    binary_operation > "*",
-    binary_operation > "/",
-    binary_operation > "//",
-    binary_operation > "%",
-    binary_operation > "..",
-    binary_operation > "^",
-    unary_operation > "not",
-    unary_operation > "#",
-    unary_operation > "-",
-    unary_operation > "~"
-  ''': 'keyword.operators'
-
-  'variable_declarator > identifier': 'entity.name.variable'
+    parameters > identifier,
+    spread
+  ''': "variable.parameter"
 
   '''
-    function > "function",
-    function > "end",
-    local_function > "local",
-    local_function > "function",
-    local_function > "end"
-  ''': 'keyword'
-  'function > function_name > identifier': 'entity.name.function'
-  'function > parameters > identifier': 'entity.name.function'
+    self,
+    global_variable
+  ''': "variable.language"
 
-  'number': 'constant.numeric.decimal'
-  'nil': 'constant.language.nil'
-  'true': 'constant.language.boolean'
-  'false': 'constant.language.boolean'
+  "nil": "constant.language"
+  "true": "constant.language.boolean"
+  "false": "constant.language.boolean"
 
-  'comment': 'comment'
+  "'local'": "storage.modifier"
+  "'function'": "storage.type.function"
+  "label_statement": "storage.type.label"
+
+  "'{'": "punctuation.definition.table.begin.bracket.curly"
+  "'}'": "punctuation.definition.table.end.bracket.curly"
+
+  '''
+    "do",
+    "return",
+    "if",
+    "then",
+    "elseif",
+    "else",
+    "while",
+    "repeat",
+    "until",
+    "for",
+    "in",
+    "goto",
+    "end"
+  ''': "keyword.control"
+
+  '''
+    "or",
+    "and",
+    "not"
+  ''': "keyword.operator.logical"
+
+  '''
+    "=",
+    "<",
+    "<=",
+    "==",
+    "~=",
+    ">=",
+    ">",
+    "|",
+    "~",
+    "&",
+    "<<",
+    ">>",
+    "+",
+    "-",
+    "*",
+    "/",
+    "//",
+    "%",
+    "..",
+    "^",
+    "#"
+  ''': "keyword.operator"
+
+  '''
+    ".",
+    ",",
+    ";"
+  ''': "meta.delimiter"
 
 folds: [
-  {
-    type: 'if_statement',
-    start: {type: '"then"'},
-    end: {type: ['"end"', 'elseif_statement', 'else_statement']}
-  }
-
-  {
-    type: 'elseif_statement',
-    start: {type: '"then"'},
-    end: {index: -1} # TODO: Does not fold the last line
-  }
-
-  {
-    type: 'else_statement',
-    start: {type: '"else"'},
-    end: {index: -1}
-  }
-
-  {
-    type: 'repeat_statement',
-    start: {type: '"repeat"'},
-    end: {type: '"until"'}
-  }
-
-  {
-    type: [
-      'for_in_statement',
-      'for_statement',
-      'while_statement',
-      'do_statement'
-    ],
-    start: {type: '"do"'},
-    end: {type: '"end"'}
-  }
-
+  # Regent
   {
     type: 'task',
     start: {type: '")"'},
@@ -190,5 +156,42 @@ folds: [
     type: 'fspace',
     start: {type: '"{"'},
     end: {type: '"}"'}
+  }
+
+  # Lua
+  {
+    type: [
+      "do_statement",
+      "while_statement",
+      "repeat_statement",
+      "for_statement",
+      "for_in_statement",
+      "function",
+      "local_function",
+      "function_definition",
+      "table"
+    ],
+    end: {index: -1}
+  },
+  {
+    type: [
+      "if_statement",
+      "elseif"
+    ],
+    start: {index: 1},
+    end: {type: ["else", "elseif"]}
+  },
+  {
+    type: "if_statement",
+    start: {index: 1},
+    end: {index: -1}
+  },
+  {
+    type: "elseif",
+    start: {index: 1}
+  },
+  {
+    type: "else",
+    start: {index: 0}
   }
 ]

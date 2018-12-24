@@ -5,8 +5,7 @@
   "keywords": [
     "language",
     "grammar",
-    "Regent",
-    "Lua"
+    "Regent"
   ],
   "repository": "https://github.com/sparkasaurusRex/language-regent",
   "license": "MIT",
@@ -14,6 +13,6 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
-    "tree-sitter-regent": "^0.0.1"
+    "tree-sitter-regent": "0.2.0"
   }
 }
