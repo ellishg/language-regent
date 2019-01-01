@@ -16,6 +16,9 @@ scopes:
   'task > name': 'entity.name.function'
   'task_parameter > name': 'constant.variable'
 
+  'terra > name': 'entity.name.function'
+  'terra_parameter > name': 'constant.variable'
+
   '''
     fspace > name,
     struct > name
@@ -35,6 +38,7 @@ scopes:
   'regent_primitive_type': 'support.storage.type'
 
   '''
+    "terra",
     "task",
     "fspace",
     "struct",
@@ -50,12 +54,31 @@ scopes:
     "atomic",
     "simultaneous",
     "relaxed",
+    "equal",
+    "disjoint",
+    "aliased",
+    "__leaf",
+    "__inner",
+    "__idempotent",
+    "__replicable",
+    "__inline",
+    "__parallel",
+    "__vectorize",
+    "__spmd",
+    "__trace",
+    "__cuda",
+    "__openmp"
   ''': 'keyword.control'
   '''
     "min",
     "max",
     "copy",
-    "fill"
+    "fill",
+    "partition",
+    "image",
+    "preimage",
+    "__demand",
+    "__forbid"
   ''': 'keyword.operators'
   '"wild"': 'constant.language'
 
