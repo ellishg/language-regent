@@ -7,6 +7,9 @@
   'task':
     'prefix': 'task'
     'body': 'task ${1:name}(${2:args}) : ${3:return_type}\nwhere\n\t${4:privileges}\ndo\n\t${5:-- body...}\nend'
+  'terra':
+    'prefix': 'terra'
+    'body': 'terra ${1:name}(${2:args})\n\t${3:-- body...}\nend'
   'fspace':
     'prefix': 'fspace'
     'body': 'fspace ${1:name} {\n\t${2:-- data...}\n}'
