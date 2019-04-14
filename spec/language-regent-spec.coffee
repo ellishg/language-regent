@@ -9,7 +9,7 @@ describe "Regent grammar", ->
       atom.packages.activatePackage("language-regent")
 
     runs ->
-      grammar = atom.syntax.grammarForScopeName("source.regent")
+      grammar = atom.grammars.grammarForScopeName("source.regent")
 
   it "parses the grammar", ->
     expect(grammar).toBeTruthy()
