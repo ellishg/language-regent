@@ -63,6 +63,7 @@ scopes:
     "__replicable",
     "__inline",
     "__parallel",
+    "__index_launch",
     "__vectorize",
     "__spmd",
     "__trace",
